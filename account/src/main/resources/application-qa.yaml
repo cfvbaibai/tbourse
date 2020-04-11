@@ -1,0 +1,4 @@
+logging:
+  file: log-qa.txt
+  level:
+    root: INFO
