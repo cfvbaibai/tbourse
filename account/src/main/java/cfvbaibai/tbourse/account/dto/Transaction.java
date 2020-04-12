@@ -1,18 +1,25 @@
 package cfvbaibai.tbourse.account.dto;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @SuppressWarnings("unused")
+@Entity
+@Table(name = "Tran")
 public class Transaction {
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Integer id;
     private int cardId;
-    private LocalDate utcTime;
+    private LocalDateTime utcTime;
     private String opponent;
     private BigDecimal amount;
     private String memo;
 
-    public Transaction(int id, int cardId, LocalDate utcTime, String opponent, BigDecimal amount, String memo) {
+    protected Transaction() {}
+
+    public Transaction(Integer id, int cardId, LocalDateTime utcTime, String opponent, BigDecimal amount, String memo) {
         this.id = id;
         this.cardId = cardId;
         this.utcTime = utcTime;
@@ -21,11 +28,11 @@ public class Transaction {
         this.memo = memo;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -37,11 +44,11 @@ public class Transaction {
         this.cardId = cardId;
     }
 
-    public LocalDate getUtcTime() {
+    public LocalDateTime getUtcTime() {
         return utcTime;
     }
 
-    public void setUtcTime(LocalDate utcTime) {
+    public void setUtcTime(LocalDateTime utcTime) {
         this.utcTime = utcTime;
     }
 
