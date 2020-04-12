@@ -1,6 +1,6 @@
-package cfvbaibai.tbourse.account.services;
+package cfvbaibai.tbourse.account.service;
 
-import cfvbaibai.tbourse.account.beans.Account;
+import cfvbaibai.tbourse.account.dto.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController()
 @RequestMapping("/accounts")
 public class AccountController {
-
     @Autowired
     public JdbcTemplate jdbc;
 

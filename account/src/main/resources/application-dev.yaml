@@ -10,6 +10,9 @@ logging:
               BasicBinder: TRACE
 
 spring:
+  datasource:
+    schema: classpath:schema-dev.sql
+    data: classpath:data-dev.sql
   jpa:
     hibernate:
       ddl-auto: none

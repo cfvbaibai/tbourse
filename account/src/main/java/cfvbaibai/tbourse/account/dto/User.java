@@ -1,31 +1,24 @@
-package cfvbaibai.tbourse.account.storage;
+package cfvbaibai.tbourse.account.dto;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "User")
 @SuppressWarnings("unused")
-public class UserEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class User {
+    private int id;
     private int identityType;
     private String identityNumber;
     private LocalDate birthDate;
 
-    protected UserEntity() {
+    protected User() {}
 
-    }
-
-    public UserEntity(Integer id, int identityType, String identityNumber, LocalDate birthDate) {
+    public User(int id, int identityType, String identityNumber, LocalDate birthDate) {
         this.id = id;
         this.identityType = identityType;
         this.identityNumber = identityNumber;
         this.birthDate = birthDate;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -41,7 +34,7 @@ public class UserEntity {
         return birthDate;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
