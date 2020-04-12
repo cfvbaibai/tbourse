@@ -1,4 +1,4 @@
-package cfvbaibai.tbourse.account;
+package cfvbaibai.tbourse.account.beans;
 
 @SuppressWarnings("unused")
 public class Account {

@@ -1,4 +1,4 @@
-package cfvbaibai.tbourse.account;
+package cfvbaibai.tbourse.account.beans;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.math.BigDecimal;
 

@@ -1,5 +1,6 @@
-package cfvbaibai.tbourse.account;
+package cfvbaibai.tbourse.account.services;
 
+import cfvbaibai.tbourse.account.beans.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
