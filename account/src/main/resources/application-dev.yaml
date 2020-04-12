@@ -8,6 +8,11 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
+    cfvbaibai:
+      tbourse:
+        account:
+          storage:
+            TransactionMapper: DEBUG
 
 spring:
   datasource:

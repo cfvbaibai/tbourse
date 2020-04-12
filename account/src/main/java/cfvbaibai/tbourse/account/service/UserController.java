@@ -33,6 +33,7 @@ public class UserController {
 }
 
 @Service
+@SuppressWarnings("unused")
 class UserService {
     @Autowired
     private UserRepository repo;
@@ -41,7 +42,7 @@ class UserService {
 
     public List<User> findMultiple() {
         List<User> result = new ArrayList<>();
-        repo.findAll().forEach(u -> { result.add(mapper.map(u, User.class)); });
+        repo.findAll().forEach(u -> result.add(mapper.map(u, User.class)));
         return result;
     }
 
