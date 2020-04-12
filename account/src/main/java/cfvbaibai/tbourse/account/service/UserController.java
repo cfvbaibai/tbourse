@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/users")
@@ -40,10 +40,12 @@ class UserService {
     private ModelMapper mapper;
 
     public List<User> findMultiple() {
-        return repo.findAll().stream().map(ue -> mapper.map(ue, User.class)).collect(Collectors.toList());
+        List<User> result = new ArrayList<>();
+        repo.findAll().forEach(u -> { result.add(mapper.map(u, User.class)); });
+        return result;
     }
 
     public User findSingle(int id) {
-        return mapper.map(repo.findById(id), User.class);
+        return repo.findById(id).map(u -> mapper.map(u, User.class)).orElse(null);
     }
 }
