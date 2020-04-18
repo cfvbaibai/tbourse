@@ -18,7 +18,7 @@ public class AccountController {
         Account account = jdbc
                 .query(
                     sql, new Object[] { id },
-                    (rs, n) -> new Account(id, rs.getInt("userId"), rs.getString("name")))
+                    (rs, n) -> new Account(id, rs.getInt("user_id"), rs.getString("name")))
                 .stream().findFirst().orElse(null);
         return account;
     }

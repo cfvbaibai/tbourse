@@ -1,6 +1,8 @@
 package cfvbaibai.tbourse.account.storage;
 
 import cfvbaibai.tbourse.account.dto.AccountTransactionStat;
+import cfvbaibai.tbourse.account.dto.Transaction;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -8,7 +10,7 @@ import java.util.List;
 
 @Mapper
 @SuppressWarnings("unused")
-public interface TransactionMapper {
+public interface TransactionMapper extends BaseMapper<Transaction> {
     @Select("SELECT a.id AS accountId, COUNT(*) AS transactionCount " +
             "FROM Tran AS t " +
             "LEFT JOIN Card AS c ON t.card_id = c.id " +

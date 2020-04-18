@@ -22,6 +22,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.modelmapper.extensions:modelmapper-spring:2.3.7")
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1")
+    implementation("com.baomidou:mybatis-plus-boot-starter:3.3.1.tmp")
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
