@@ -1,4 +1,4 @@
-package cfvbaibai.tbourse.account.storage;
+package cfvbaibai.tbourse.account.dao;
 
 import javax.persistence.*;
 import java.time.LocalDate;

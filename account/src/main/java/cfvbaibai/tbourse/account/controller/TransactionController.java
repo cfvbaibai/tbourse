@@ -1,16 +1,16 @@
-package cfvbaibai.tbourse.account.service;
+package cfvbaibai.tbourse.account.controller;
 
 import cfvbaibai.tbourse.account.dto.AccountTransactionStat;
+import cfvbaibai.tbourse.account.dao.TransactionEntity;
 import cfvbaibai.tbourse.account.dto.Transaction;
-import cfvbaibai.tbourse.account.storage.TransactionMapper;
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import cfvbaibai.tbourse.account.service.TransactionService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/transactions")
@@ -18,15 +18,18 @@ import java.util.List;
 public class TransactionController {
     @Autowired
     private TransactionService svc;
+    @Autowired
+    private ModelMapper mapper;
 
     @GetMapping
     public List<Transaction> findByCardId(@RequestParam int cardId) {
-        return svc.listByMap(new HashMap<String, Object>() {{put("cardId", cardId);}});
+        List<TransactionEntity> entities = svc.listByMap(new HashMap<String, Object>() {{put("cardId", cardId);}});
+        return entities.stream().map(t -> mapper.map(t, Transaction.class)).collect(Collectors.toList());
     }
 
     @PutMapping
     public void addTransaction(@RequestBody Transaction transaction) {
-        svc.save(transaction);
+        svc.save(mapper.map(transaction, TransactionEntity.class));
     }
 
     @GetMapping("/stat")

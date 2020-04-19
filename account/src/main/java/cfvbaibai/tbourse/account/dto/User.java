@@ -1,6 +1,8 @@
 package cfvbaibai.tbourse.account.dto;
 
 import java.time.LocalDate;
+import java.util.Objects;
+import java.util.StringJoiner;
 
 @SuppressWarnings("unused")
 public class User {
@@ -48,5 +50,31 @@ public class User {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id &&
+                identityType == user.identityType &&
+                Objects.equals(identityNumber, user.identityNumber) &&
+                Objects.equals(birthDate, user.birthDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, identityType, identityNumber, birthDate);
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("identityType=" + identityType)
+                .add("identityNumber='" + identityNumber + "'")
+                .add("birthDate=" + birthDate)
+                .toString();
     }
 }

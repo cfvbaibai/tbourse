@@ -1,7 +1,7 @@
 package cfvbaibai.tbourse.account.service;
 
 import cfvbaibai.tbourse.account.dto.User;
-import cfvbaibai.tbourse.account.storage.UserRepository;
+import cfvbaibai.tbourse.account.dao.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,9 +9,16 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
+public interface UserService {
+    List<User> findMultiple();
+    User findSingle(int id);
+}
+
+
 @Service
 @SuppressWarnings("unused")
-class UserService {
+class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository repo;
     @Autowired

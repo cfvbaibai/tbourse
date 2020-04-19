@@ -1,4 +1,4 @@
-package cfvbaibai.tbourse.account.service;
+package cfvbaibai.tbourse.account.controller;
 
 import cfvbaibai.tbourse.account.dto.Account;
 import org.springframework.beans.factory.annotation.Autowired;

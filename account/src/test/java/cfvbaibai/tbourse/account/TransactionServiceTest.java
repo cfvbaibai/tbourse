@@ -1,7 +1,7 @@
 package cfvbaibai.tbourse.account;
 
 import cfvbaibai.tbourse.account.dto.AccountTransactionStat;
-import cfvbaibai.tbourse.account.dto.Transaction;
+import cfvbaibai.tbourse.account.dao.TransactionEntity;
 import cfvbaibai.tbourse.account.service.TransactionService;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -26,8 +26,8 @@ public class TransactionServiceTest extends TbourseTest {
 
     @Test
     public void getTranTest() {
-        Transaction actual = svc.getById(1);
-        Transaction expected = new Transaction(
+        TransactionEntity actual = svc.getById(1);
+        TransactionEntity expected = new TransactionEntity(
                 1, 1, LocalDateTime.parse("2020-03-10T15:05:00"), "Microsoft",
                 BigDecimal.valueOf(5.0), "Azure monthly charge");
         assertEquals(expected, actual);

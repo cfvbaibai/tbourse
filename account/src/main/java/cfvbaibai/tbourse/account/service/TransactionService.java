@@ -1,10 +1,17 @@
 package cfvbaibai.tbourse.account.service;
 
-import cfvbaibai.tbourse.account.dto.Transaction;
-import cfvbaibai.tbourse.account.storage.TransactionMapper;
+import cfvbaibai.tbourse.account.dao.TransactionEntity;
+import cfvbaibai.tbourse.account.dao.TransactionMapper;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+
+public interface TransactionService extends IService<TransactionEntity> {
+    TransactionMapper getBaseMapper();
+}
+
 @Service
-public class TransactionService extends ServiceImpl<TransactionMapper, Transaction> {
+@SuppressWarnings("unused")
+class TransactionServiceImpl extends ServiceImpl<TransactionMapper, TransactionEntity> implements TransactionService {
 }
