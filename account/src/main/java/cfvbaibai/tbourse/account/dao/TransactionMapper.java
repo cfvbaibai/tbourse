@@ -4,10 +4,12 @@ import cfvbaibai.tbourse.account.dto.AccountTransactionStat;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
+@Repository
 @SuppressWarnings("unused")
 public interface TransactionMapper extends BaseMapper<TransactionEntity> {
     @Select("SELECT a.id AS accountId, COUNT(*) AS transactionCount " +

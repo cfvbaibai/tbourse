@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@Service
 public interface UserService {
     List<User> findMultiple();
     User findSingle(int id);
