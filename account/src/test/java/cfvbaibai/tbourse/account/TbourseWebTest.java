@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SuppressWarnings("unused")
 public class TbourseWebTest extends TbourseTest {
     @LocalServerPort
     private int localPort;

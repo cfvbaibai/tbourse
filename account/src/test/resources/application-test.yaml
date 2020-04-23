@@ -24,3 +24,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+
+hbase:
+  zookeeper:
+    address: hb-proxy-pub-bp1n0q702l2cir025-001.hbase.rds.aliyuncs.com:2181
+
+  tables:
+    user_msg: user_msg
