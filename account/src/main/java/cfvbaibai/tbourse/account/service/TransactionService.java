@@ -13,6 +13,5 @@ public interface TransactionService extends IService<TransactionEntity> {
 }
 
 @Service
-@SuppressWarnings("unused")
 class TransactionServiceImpl extends ServiceImpl<TransactionMapper, TransactionEntity> implements TransactionService {
 }

@@ -1,6 +1,5 @@
 package cfvbaibai.tbourse.account.dto;
 
-@SuppressWarnings("unused")
 public class Account {
     private Integer id;
 

@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-@SuppressWarnings("unused")
 public class UserController {
     @Autowired
     private UserService service;

@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-@SuppressWarnings("unused")
 @TableName(value = "Tran")
 public class TransactionEntity {
     private Integer id;

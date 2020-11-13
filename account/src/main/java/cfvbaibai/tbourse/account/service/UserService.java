@@ -18,7 +18,6 @@ public interface UserService {
 
 
 @Service
-@SuppressWarnings("unused")
 class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository repo;

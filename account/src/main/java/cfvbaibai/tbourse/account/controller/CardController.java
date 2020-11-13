@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cards")
-@SuppressWarnings("unused")
 public class CardController {
     @Autowired
     private JdbcTemplate jdbc;

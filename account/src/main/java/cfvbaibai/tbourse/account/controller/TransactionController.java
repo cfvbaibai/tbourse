@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/transactions")
-@SuppressWarnings("unused")
 public class TransactionController {
     @Autowired
     private TransactionService svc;
@@ -23,7 +22,12 @@ public class TransactionController {
 
     @GetMapping
     public List<Transaction> findByCardId(@RequestParam int cardId) {
-        List<TransactionEntity> entities = svc.listByMap(new HashMap<String, Object>() {{put("cardId", cardId);}});
+        List<TransactionEntity> entities = svc.listByMap(new HashMap<String, Object>() {
+            private static final long serialVersionUID = 87145244333887340L;
+            {
+                put("cardId", cardId);
+            }
+        });
         return entities.stream().map(t -> mapper.map(t, Transaction.class)).collect(Collectors.toList());
     }
 

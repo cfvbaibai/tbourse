@@ -43,6 +43,15 @@ tasks {
         }
     }
 }
+tasks.register("bootRunDev") {
+    description = "Runs the Spring Boot application with the dev profile"
+    doFirst {
+        tasks.bootRun.configure {
+            systemProperty("spring.profiles.active", "dev")
+        }
+    }
+    finalizedBy("bootRun")
+}
 
 version = "1.0.0"
 

@@ -2,7 +2,7 @@ package cfvbaibai.tbourse.account.dto;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.math.BigDecimal;
 
-@SuppressWarnings("unused")
+
 public class Card {
 
     public static class Type {

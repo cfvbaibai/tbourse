@@ -10,7 +10,6 @@ import java.util.List;
 
 @Mapper
 @Repository
-@SuppressWarnings("unused")
 public interface TransactionMapper extends BaseMapper<TransactionEntity> {
     @Select("SELECT a.id AS accountId, COUNT(*) AS transactionCount " +
             "FROM Tran AS t " +

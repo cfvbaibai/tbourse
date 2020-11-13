@@ -14,7 +14,6 @@ public class AccountController {
     @GetMapping("/{id}")
     public Account getAccount(@PathVariable int id) {
         String sql = "SELECT * FROM Account WHERE id = ?";
-        @SuppressWarnings("UnnecessaryLocalVariable")
         Account account = jdbc
                 .query(
                     sql, new Object[] { id },
