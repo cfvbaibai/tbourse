@@ -16,9 +16,11 @@ public class TransactionEntity {
     private BigDecimal amount;
     private String memo;
 
-    protected TransactionEntity() {}
+    protected TransactionEntity() {
+    }
 
-    public TransactionEntity(Integer id, int cardId, LocalDateTime utcTime, String opponent, BigDecimal amount, String memo) {
+    public TransactionEntity(Integer id, int cardId, LocalDateTime utcTime, 
+                             String opponent, BigDecimal amount, String memo) {
         this.id = id;
         this.cardId = cardId;
         this.utcTime = utcTime;
@@ -77,27 +79,21 @@ public class TransactionEntity {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", TransactionEntity.class.getSimpleName() + "[", "]")
-                .add("id=" + id)
-                .add("cardId=" + cardId)
-                .add("utcTime=" + utcTime)
-                .add("opponent='" + opponent + "'")
-                .add("amount=" + amount)
-                .add("memo='" + memo + "'")
-                .toString();
+        return new StringJoiner(", ", TransactionEntity.class.getSimpleName() + "[", "]").add("id=" + id)
+                .add("cardId=" + cardId).add("utcTime=" + utcTime).add("opponent='" + opponent + "'")
+                .add("amount=" + amount).add("memo='" + memo + "'").toString();
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         TransactionEntity that = (TransactionEntity) o;
-        return cardId == that.cardId &&
-                id.equals(that.id) &&
-                Objects.equals(utcTime, that.utcTime) &&
-                Objects.equals(opponent, that.opponent) &&
-                Objects.equals(amount, that.amount) &&
-                Objects.equals(memo, that.memo);
+        return cardId == that.cardId && id.equals(that.id) && Objects.equals(utcTime, that.utcTime)
+                && Objects.equals(opponent, that.opponent) && Objects.equals(amount, that.amount)
+                && Objects.equals(memo, that.memo);
     }
 
     @Override
