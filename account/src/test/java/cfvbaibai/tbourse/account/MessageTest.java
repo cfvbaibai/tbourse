@@ -41,7 +41,8 @@ public class MessageTest extends TbourseWebTest {
     public void testPing() {
         log.info("Message test!");
     }
-    @Test
+
+    // @Test
     public void testMessageBasic() throws IOException {
         byte[] rowKey = buildRowKey(1, LocalDateTime.now(ZoneId.of("UTC")));
         String expectedValue = "Hellow World!";

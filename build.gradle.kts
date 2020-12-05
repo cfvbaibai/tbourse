@@ -1,4 +1,10 @@
 allprojects {
+    tasks.register("hello") {
+        doLast {
+            println("I'm ${project.name}")
+        }
+    }
+
     group = "cfvbaibai.tbourse"
 
     repositories {

@@ -1,2 +1,2 @@
 rootProject.name = "tbourse"
-include("account", "equity", "futures", "payment")
+include("core", "account", "equity", "futures", "payment")
