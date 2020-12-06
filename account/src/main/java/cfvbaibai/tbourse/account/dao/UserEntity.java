@@ -3,6 +3,7 @@ package cfvbaibai.tbourse.account.dao;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "User")
 public class UserEntity {

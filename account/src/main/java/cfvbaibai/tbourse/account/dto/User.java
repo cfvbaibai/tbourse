@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 import java.util.StringJoiner;
 
+@SuppressWarnings("unused")
 public class User {
     private int id;
     private int identityType;

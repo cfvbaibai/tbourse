@@ -3,6 +3,7 @@ package cfvbaibai.tbourse.account.dto;
 import java.util.Objects;
 import java.util.StringJoiner;
 
+@SuppressWarnings("unused")
 public class AccountTransactionStat {
     private int accountId;
     private int transactionCount;

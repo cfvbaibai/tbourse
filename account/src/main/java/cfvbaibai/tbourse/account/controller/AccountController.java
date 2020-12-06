@@ -14,7 +14,8 @@ public class AccountController {
     @GetMapping("/{id}")
     public Account getAccount(@PathVariable int id) {
         String sql = "SELECT * FROM Account WHERE id = ?";
-        Account account = jdbc
+        Account account;
+        account = jdbc
                 .query(
                     sql, new Object[] { id },
                     (rs, n) -> new Account(id, rs.getInt("user_id"), rs.getString("name")))

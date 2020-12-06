@@ -11,12 +11,11 @@ import javax.annotation.Resource;
 @Controller
 @RequestMapping("/calc")
 public class CalculationController {
-    // @Resource(name = "calculator")
-    // private Calculator calculator;
+    @Resource(name = "calculator")
+    private Calculator calculator;
 
     @GetMapping(path="/add")
     public int add(@RequestParam int a, @RequestParam int b) {
-        // return calculator.add(a, b);
-        return a + b;
+        return calculator.add(a, b);
     }
 }
