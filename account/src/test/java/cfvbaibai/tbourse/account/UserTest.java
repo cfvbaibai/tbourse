@@ -2,6 +2,8 @@ package cfvbaibai.tbourse.account;
 
 import cfvbaibai.tbourse.account.dto.User;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.test.context.ContextConfiguration;
 
 import java.time.LocalDate;
 

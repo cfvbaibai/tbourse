@@ -11,8 +11,6 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-
-
 dependencies {
     implementation("org.apache.commons:commons-math3:3.6.1")
     implementation("com.google.guava:guava:28.0-jre")

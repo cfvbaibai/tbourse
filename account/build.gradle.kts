@@ -26,6 +26,7 @@ dependencies {
         exclude(group = "org.slf4j", module = "slf4j-log4j12")  // Remove to avoid conflicts with logback
     }
     runtimeOnly("com.h2database:h2")
+    implementation(project(":core"))
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }

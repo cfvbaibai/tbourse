@@ -6,16 +6,24 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
 
 import javax.sql.DataSource;
 
 @ActiveProfiles("test")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+//@ComponentScan("cfvbaibai.tbourse")
+//@ContextConfiguration(classes = {
+//        cfvbaibai.tbourse.core.CoreConfig.class,
+//        cfvbaibai.tbourse.account.GlobalConfig.class,
+//        cfvbaibai.tbourse.account.GlobalConfiguration.class})
 @Component
 @SuppressWarnings("unused")
 public class TbourseTest {
